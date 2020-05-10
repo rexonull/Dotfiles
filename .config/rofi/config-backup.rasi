@@ -1,0 +1,15 @@
+configuration {
+	modi: "window,run,ssh,drun";
+	width: 50;
+	lines: 15;
+	columns: 1;
+	show-icons: true;
+	icon-theme: "Papirus-dark";
+	padding: 20;
+	font: "Cantarell 12";
+	bw: 0;
+	terminal: "urxvt";
+	separator-style: "none";
+	hide-scrollbar: true;
+	scroll-method: 1;
+}

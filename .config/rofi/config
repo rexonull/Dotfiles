@@ -1,0 +1,13 @@
+rofi.modi: window,run,ssh,drun
+rofi.width: 50
+rofi.lines: 15
+rofi.columns: 1
+rofi.show-icons: true
+rofi.icon-theme: Papirus-dark
+rofi.padding: 20
+rofi.font: Cantarell 12
+rofi.bw: 0
+rofi.terminal: urxvt
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.scroll-method: 1

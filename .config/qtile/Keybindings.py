@@ -3,14 +3,14 @@ from libqtile.config import Key
 
 mod = "mod4"
 browser = "firefox"
-terminal = "urxvt"
+terminal = "st"
 
 def term_exec(command):
     cmd = terminal + " -e " + command
     return cmd
 
 run_bindings = [
-    [mod, "Return", "urxvt"],
+    [mod, "Return", terminal],
     [mod, "space", "rofi -show run"],
     [mod, "b", browser],
     [mod, "shift", "Delete", "betterlockscreen -l dimblur"],

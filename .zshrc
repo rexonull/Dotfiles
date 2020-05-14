@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/rasum/.oh-my-zsh"
+export ZSH="/home/rexonull/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-###############
+##############
 ### ALIASES ###
 ###############
 alias pythondir='cd ~/My/Coding/python3 && ls'
@@ -117,7 +117,7 @@ alias sudoers_passwd='sudo cp ~/Documents/.sudoers_copy/.passwd.txt /etc/sudoers
 alias sudoers_nopasswd='sudo cp ~/Documents/.sudoers_copy/.nopasswd.txt /etc/sudoers'
 alias yt-dl-m='youtube-dl -o "%(title)s.%(ext)s" --extract-audio --audio-format mp3'
 alias qconfdir='cd ~/.config/qtile && ls'
-alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 ###############
 ### STARTUP ###
@@ -135,3 +135,4 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%F{blue}[%f%b%F{blue}]%f %r'
 RPROMPT=\$vcs_info_msg_0_
+

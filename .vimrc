@@ -1,6 +1,12 @@
-source $VIMRUNTIME/defaults.vim
 set number
 syntax on
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set smartindent
+set noswapfile
+set incsearch
+set laststatus=2
+set noshowmode
 
 call plug#begin('~/.vim/plugged')
 
@@ -9,20 +15,16 @@ Plug 'yggdroot/indentline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'ap/vim-css-color'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
 let $PYTHONPATH="/usr/lib/python3.8/site-packages"
 let g:indentLine_color_term = 243
 let g:indentLine_char = '┊'
-
-set laststatus=2
-
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
-
-set noshowmode
+let g:lightline = {'colorscheme': 'wombat',}
+let mapleader = " "
 
 hi Comment ctermfg = 7
 "hi Identifier ctermfg = 5
@@ -51,3 +53,4 @@ hi Comment ctermfg = 7
 "highlight Number           ctermfg=1    ctermbg=none    cterm=none
 "highlight Function         ctermfg=1    ctermbg=none    cterm=none
 
+let g:vimwiki_list = [{'path': '~/My/vimwiki/', 'syntax': 'markdown', 'ext': '.wiki'}]

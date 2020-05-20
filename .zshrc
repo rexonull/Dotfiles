@@ -118,6 +118,7 @@ alias sudoers_nopasswd='sudo cp ~/Documents/.sudoers_copy/.nopasswd.txt /etc/sud
 alias yt-dl-m='youtube-dl -o "%(title)s.%(ext)s" --extract-audio --audio-format mp3'
 alias qconfdir='cd ~/.config/qtile && ls'
 alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias vimwiki='vim ~/My/vimwiki/index.wiki'
 
 ###############
 ### STARTUP ###

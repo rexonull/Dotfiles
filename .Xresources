@@ -17,7 +17,7 @@ rofi.disable-history: true
 ! URxvt Color theme
 ! ------------------------------------------------------------------------------
  
-*.font:  Monospace:size=9
+*.font: Fira Code:size=9
 
 !URxvt*letterSpace: -1
 URxvt*scrollBar: false

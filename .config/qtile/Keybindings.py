@@ -3,7 +3,7 @@ from libqtile.config import Key
 
 mod = "mod4"
 browser = "firefox"
-terminal = "st"
+terminal = "termite"
 
 def term_exec(command):
     cmd = terminal + " -e " + command
@@ -25,8 +25,8 @@ run_bindings = [
 
 special_bindings = [
     # Switch between windows
-    Key([mod], "k", lazy.layout.down()),
-    Key([mod], "j", lazy.layout.up()),
+    Key([mod], "k", lazy.layout.up()),
+    Key([mod], "j", lazy.layout.down()),
 
     # Move windows up or down
     Key([mod, "shift"], "j", lazy.layout.shuffle_down()),

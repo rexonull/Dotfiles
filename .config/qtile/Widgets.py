@@ -5,13 +5,13 @@ defaults = dict(
     font="Cantarell",
     fontsize=12,
     padding=3,
-    background="#272727",
-    foreground="#747474"
+    background="#18352e",
+    foreground="#aeaeae"
 )
 
 extension_defaults = defaults.copy()
 
-bar_colors = ["#14a76c", "#ffe400", "#ff652f"]
+bar_colors = ["#00fc42", "#0095af", "#ca6048"]
 
 widgets = [
     widget.GroupBox(
@@ -19,10 +19,10 @@ widgets = [
         highlight_method = "line",
         rounded = False,
         borderwidth = 2,
-        inactive = "#9b2a01",
-        active = "#ff652f",
-        highlight_color = ["#272727", "#272727"],
-        this_current_screen_border = "#ff652f",
+        inactive = "#027263",
+        active = "#00ffdc",
+        highlight_color = ["#18352e", "#18352e"],
+        this_current_screen_border = "#00ffdc",
         fontsize = 12,
         ),
     widget.WindowName(),

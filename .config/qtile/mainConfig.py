@@ -28,4 +28,8 @@ def start():
 
     for i, (name, kwargs) in enumerate(Groups.names, 1):
         keys.append(Key(["mod4"], str(i), lazy.group[name].toscreen()))
-        keys.append(Key(["mod4", "shift"], str(i), lazy.window.togroup(name)))
+        keys.append(Key(["mod4", "shift"], str(i), lazy.window.togroup(name))) 
+
+    Groups.names.append(("password", {'layout': 'max'}))
+    keys.append(Key(["mod4", "control"], "p", lazy.group["password"].toscreen()))
+    keys.append(Key(["mod4", "control", "shift"], "p", lazy.window.togroup("password")))

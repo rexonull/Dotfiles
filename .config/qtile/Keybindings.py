@@ -1,21 +1,25 @@
 from libqtile.lazy import lazy
 from libqtile.config import Key
+from libqtile import extension
 
 mod = "mod4"
 browser = "firefox"
 terminal = "termite"
 
 def term_exec(command):
-    cmd = terminal + " -e " + command
+    cmd = terminal + " -e '" + command + "'"
     return cmd
 
 run_bindings = [
     [mod, "Return", terminal],
-    [mod, "space", "rofi -show run"],
+    [mod, "space", "dmenu_run -nb '#111111' -nf '#aeaeae' -sb '#00ffdc' -sf '#002329' -h 25"],
     [mod, "b", browser],
     [mod, "shift", "Delete", "betterlockscreen -l dimblur"],
     [mod, "f", term_exec("ranger")],
+    [mod, "control", "f", "pcmanfm"],
     [mod, "shift", "Return", "rofi -show drun -fullscreen"],
+    [mod, "m", "java -jar /home/rexonull/My/minecraft/TLauncher-2.71.jar"],
+    [mod, "mod1", "k", term_exec("less /home/rexonull/My/Coding/python3/keypresses.txt")],
     ["XF86AudioMute", "amixer -q set Master toggle"],
     ["XF86AudioLowerVolume", "amixer set Master 5%- unmute"],
     ["XF86AudioRaiseVolume", "amixer set Master 5%+ unmute"],
@@ -52,4 +56,15 @@ special_bindings = [
     # Toggle floating and fullscreen
     Key([mod], "s", lazy.window.toggle_floating()),
     Key([mod, "shift"], "f", lazy.window.toggle_fullscreen()),
+
+    # # Dmenu
+    # Key([mod], 'r', lazy.run_extension(extension.DmenuRun(
+        # dmenu_prompt=">",
+        # dmenu_font="Comfortaa",
+        # background="#18352e",
+        # foreground="#aeaeae",
+        # selected_background="#00ffdc",
+        # selected_foreground="#aeaeae",
+        # dmenu_height=25,  # Only supported by some dmenu forks
+    # ))),
 ]

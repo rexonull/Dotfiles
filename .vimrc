@@ -1,5 +1,6 @@
 set number
 syntax on
+set expandtab
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set smartindent
@@ -17,6 +18,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ap/vim-css-color'
 Plug 'vimwiki/vimwiki'
+"Plug 'ycm-core/YouCompleteMe'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -25,6 +28,12 @@ let g:indentLine_color_term = 243
 let g:indentLine_char = '┊'
 let g:lightline = {'colorscheme': 'wombat',}
 let mapleader = " "
+
+let g:termdebug_wide=1
+packadd termdebug
+
+"nmap <C-n> :NERDTreeToggle<CR>
+colo rexocyan
 
 hi Comment ctermfg = 7
 "hi Identifier ctermfg = 5

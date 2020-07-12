@@ -97,14 +97,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-##############
+###############
 ### ALIASES ###
 ###############
 alias pythondir='cd ~/My/Coding/python3 && ls'
 alias webdir='cd ~/My/Coding/webPage && ls'
 alias cdir='cd ~/My/Coding/c && ls'
+alias cppdir='cd ~/My/Coding/c++ && ls'
+alias codedir='cd ~/My/Coding && ls'
 alias clh='history -c'
-alias tdm='cd ~/Games/tdm && ./thedarkmod.x86'
 alias ll='ls -al'
 alias l.='ls -a'
 alias conmywifi='nmcli c up ::_:: --ask'
@@ -119,6 +120,10 @@ alias yt-dl-m='youtube-dl -o "%(title)s.%(ext)s" --extract-audio --audio-format 
 alias qconfdir='cd ~/.config/qtile && ls'
 alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vimwiki='vim ~/My/vimwiki/index.wiki'
+alias music='mpv ~/Music/* --shuffle'
+alias setHDMI='xrandr --output "HDMI1" --mode 1360x768'
+alias conHDMI='xrandr --output "eDP1" --auto --output "HDMI1" --above "eDP1"'
+alias ls='lsd'
 
 ###############
 ### STARTUP ###
@@ -131,9 +136,9 @@ bindkey -v
 ##############
 ### PROMPT ###
 ##############
-PROMPT="%F{202}[%f%~%F{202}]%f$ "
+PROMPT="%F{6}[%f%~%F{6}]%f$ "
 autoload -Uz vcs_info
 precmd() { vcs_info }
-zstyle ':vcs_info:git:*' formats '%F{blue}[%f%b%F{blue}]%f %r'
+zstyle ':vcs_info:git:*' formats '%F{2}[%f%b%F{2}]%f %r'
 RPROMPT=\$vcs_info_msg_0_
 

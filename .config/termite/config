@@ -44,127 +44,50 @@ cursor_shape = block
 # If both of these are unset, cursor falls back to the foreground color,
 # and cursor_foreground falls back to the background color.
 #cursor = #dcdccc
-#cursor_foreground = #dcdccc
+#cursor_foreground = #000000
 
 #foreground = #dcdccc
 #foreground_bold = #ffffff
 #background = #3f3f3f
 
 #20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
+background = rgba(63, 63, 63, 0.8)
 
 # If unset, will reverse foreground and background
 #highlight = #2f2f2f
 
 # Colors from color0 to color254 can be set
 
-## special
-#foreground      = #747474
-#foreground_bold = #747474
-#cursor          = #747474
-#background      = #272727
-#
-## black
-#color0  = #272727
-#color8  = #747474
-#
-## red
-#color1  = #ff652f
-#color9  = #ff652f
-#
-## green
-#color2  = #14a76c
-#color10 = #14a76c
-#
-## yellow
-#color3  = #ffe400
-#color11 = #ffe400
-#
-## blue
-#color4  = #10adc2
-#color12 = #10adc2
-#
-## magenta
-#color5  = #aa65d6
-#color13 = #aa65d6
-#
-## cyan
-#color6  = #5ad8a5
-#color14 = #5ad8a5
-#
-## white
-#color7  = #474747
-#color15 = #ababab
-
-## special
-#foreground      = #93a1a1
-#foreground_bold = #93a1a1
-#cursor          = #93a1a1
-#background      = #002b36
-#
-## black
-#color0  = #002b36
-#color8  = #657b83
-#
-## red
-#color1  = #dc322f
-#color9  = #dc322f
-#
-## green
-#color2  = #859900
-#color10 = #859900
-#
-## yellow
-#color3  = #b58900
-#color11 = #b58900
-#
-## blue
-#color4  = #268bd2
-#color12 = #268bd2
-#
-## magenta
-#color5  = #6c71c4
-#color13 = #6c71c4
-#
-## cyan
-#color6  = #2aa198
-#color14 = #2aa198
-#
-## white
-#color7  = #93a1a1
-#color15 = #fdf6e3
-
-[colors]
-
 # special
 foreground      = #aeaeae
 foreground_bold = #aeaeae
 cursor          = #aeaeae
-background      = #18352e
+cursor_foreground = #18352e
+background      = #111111
 
 # black
 color0  = #002329
 color8  = #3b3b3b
 
 # red
-color1  = #ca6048
-color9  = #ca6048
+color1  = #ca4848
+color9  = #ca4848
 
 # green
 color2  = #00fc42
 color10 = #00fc42
 
 # yellow
-color3  = #efde26
-color11 = #efde26
+color3  = #b3ff00
+color11 = #b3ff00
 
 # blue
 color4  = #0095af
 color12 = #0095af
 
 # magenta
-color5  = #ae3c84
-color13 = #ae3c84
+color5  = #ca3f97
+color13 = #ca3f97
 
 # cyan
 color6  = #00ffdc
@@ -173,6 +96,7 @@ color14 = #00ffdc
 # white
 color7  = #426053
 color15 = #d0d0d0
+
 
 [hints]
 #font = Monospace 12

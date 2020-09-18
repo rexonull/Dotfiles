@@ -12,7 +12,7 @@ def term_exec(command):
 
 run_bindings = [
     [mod, "Return", terminal],
-    [mod, "space", "dmenu_run -nb '#111111' -nf '#aeaeae' -sb '#00ffdc' -sf '#002329' -h 25"],
+    [mod, "space", "dmenu_run -nb '#282c34' -nf '#abb2bf' -sb '#98c379' -sf '#002329' -h 25"],
     [mod, "b", browser],
     [mod, "shift", "Delete", "betterlockscreen -l dimblur"],
     [mod, "f", term_exec("ranger")],
@@ -20,11 +20,15 @@ run_bindings = [
     [mod, "shift", "Return", "rofi -show drun -fullscreen"],
     [mod, "m", "java -jar /home/rexonull/My/minecraft/TLauncher-2.71.jar"],
     [mod, "mod1", "k", term_exec("less /home/rexonull/My/Coding/python3/keypresses.txt")],
+    [mod, "control", "s", "scrot -e 'mv $f ~/Pictures/Screenshots && notify-send screenshot taken'"],
+    [mod, "shift", "s", "scrot -e 'mv $f ~/Documents/notes && notify-send screenshot taken'"],
+    [mod, "p", "love /home/rexonull/My/cs50_projects/pong/pong2"],
+    [mod, "r", "sxiv /home/rexonull/Pictures/routine.jpg"],
     ["XF86AudioMute", "amixer -q set Master toggle"],
     ["XF86AudioLowerVolume", "amixer set Master 5%- unmute"],
     ["XF86AudioRaiseVolume", "amixer set Master 5%+ unmute"],
-    ["XF86MonBrightnessUp", "xbacklight -inc 10"],
-    ["XF86MonBrightnessDown", "xbacklight -dec 10"],
+    ["XF86MonBrightnessUp", "xbacklight -inc 1"],
+    ["XF86MonBrightnessDown", "xbacklight -dec 1"],
 ]
 
 special_bindings = [
@@ -43,7 +47,7 @@ special_bindings = [
     Key([mod], "Tab", lazy.next_layout()),
 
     # Kill a window
-    Key([mod], "w", lazy.window.kill()),
+    Key([mod, "shift"], "c", lazy.window.kill()),
 
     # Increase and Decrease the size of the master window
     Key([mod, "control"], "k", lazy.layout.increase_ratio()),

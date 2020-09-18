@@ -1,15 +1,20 @@
 from libqtile import layout
 
 theme = {
+    "border_width": 2,
+    "margin": 10,
+    "border_focus": "#e06c75",
+    "border_normal": "#abb2bf"
+}
+theme_m = {
     "border_width": 0,
-    "margin": 15,
-    "border_focus": "#cccccc",
-    "border_normal": "#272727"
+    "margin": 2,
 }
 
 layouts = [
     layout.Max(**theme),
     layout.MonadTall(**theme),
+    layout.Floating(**theme),
 ]
 
 floating_layout = layout.Floating(float_rules=[

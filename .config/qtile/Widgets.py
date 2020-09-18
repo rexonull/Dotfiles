@@ -5,12 +5,12 @@ defaults = dict(
     font="Cantarell",
     fontsize=12,
     padding=3,
-    background="#111111",
-    foreground="#aeaeae"
+    background="#282c34",
+    foreground="#abb2bf"
 )
 
 extension_defaults = defaults.copy()
-bar_colors = ["#00fc42", "#0095af", "#ca6048"]
+bar_colors = ["#98c379", "#61afef", "#e06c75"]
 
 def init_widgets_list():
     widgets_list = [
@@ -20,10 +20,10 @@ def init_widgets_list():
             padding_x = 6,
             rounded = False,
             borderwidth = 2,
-            inactive = "#027263",
-            active = "#00ffdc",
-            highlight_color = ["#111111", "#111111"],
-            this_current_screen_border = "#00ffdc",
+            inactive = "#3e4452",
+            active = "#abb2bf",
+            highlight_color = ["#282c34", "#282c34"],
+            this_current_screen_border = "#abb2bf",
             fontsize = 12,
             visible_groups = ['web', 'code', 'mail', 'chat', 'game'],
             ),
@@ -33,10 +33,10 @@ def init_widgets_list():
             padding_x = 3,
             rounded = False,
             borderwidth = 2,
-            inactive = "#027263",
-            active = "#00ffdc",
-            highlight_color = ["#111111", "#111111"],
-            this_current_screen_border = "#00ffdc",
+            inactive = "#3e4452",
+            active = "#abb2bf",
+            highlight_color = ["#282c34", "#282c34"],
+            this_current_screen_border = "#abb2bf",
             fontsize = 12,
             visible_groups = ['6', '7', '8'],
             ),

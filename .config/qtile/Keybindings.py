@@ -12,9 +12,10 @@ def term_exec(command):
 
 run_bindings = [
     [mod, "Return", terminal],
-    [mod, "space", "dmenu_run -nb '#282c34' -nf '#abb2bf' -sb '#98c379' -sf '#002329' -h 25"],
+    [mod, "space", "dmenu_run -nb '#161821' -nf '#c6c8d1' -sb '#b4be82' -sf '#002329' -h 25"],
     [mod, "b", browser],
-    [mod, "shift", "Delete", "betterlockscreen -l dimblur"],
+    [mod, "shift", "Delete", "betterlockscreen -l"],
+    [mod, "control", "Delete", "betterlockscreen -s"],
     [mod, "f", term_exec("ranger")],
     [mod, "control", "f", "pcmanfm"],
     [mod, "shift", "Return", "rofi -show drun -fullscreen"],
@@ -24,11 +25,16 @@ run_bindings = [
     [mod, "shift", "s", "scrot -e 'mv $f ~/Documents/notes && notify-send screenshot taken'"],
     [mod, "p", "love /home/rexonull/My/cs50_projects/pong/pong2"],
     [mod, "r", "sxiv /home/rexonull/Pictures/routine.jpg"],
+    [mod, "v", term_exec("vim")],
     ["XF86AudioMute", "amixer -q set Master toggle"],
     ["XF86AudioLowerVolume", "amixer set Master 5%- unmute"],
     ["XF86AudioRaiseVolume", "amixer set Master 5%+ unmute"],
     ["XF86MonBrightnessUp", "xbacklight -inc 1"],
     ["XF86MonBrightnessDown", "xbacklight -dec 1"],
+    ["shift", "XF86AudioLowerVolume", "amixer set Master 10%- unmute"],
+    ["shift", "XF86AudioRaiseVolume", "amixer set Master 10%+ unmute"],
+    ["shift", "XF86MonBrightnessUp", "xbacklight -inc 5"],
+    ["shift", "XF86MonBrightnessDown", "xbacklight -dec 5"],
 ]
 
 special_bindings = [
@@ -55,7 +61,7 @@ special_bindings = [
 
     # Restart and Shutdown qtile
     Key([mod, "shift"], "r", lazy.restart()),
-    Key([mod, "shift"], "q", lazy.shutdown()),
+    Key([mod, "shift", "control", "mod1"], "q", lazy.shutdown()),
 
     # Toggle floating and fullscreen
     Key([mod], "s", lazy.window.toggle_floating()),

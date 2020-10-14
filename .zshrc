@@ -97,6 +97,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export TERM=xterm-256color
+
 ###############
 ### ALIASES ###
 ###############
@@ -114,8 +116,6 @@ alias wifiscan='iwlist scan | grep SSID'
 alias bspwmconf='vim ~/.config/bspwm/bspwmrc'
 alias sxhkdconf='vim ~/.config/sxhkd/sxhkdrc'
 alias qtileconf='vim ~/.config/qtile/config.py'
-alias sudoers_passwd='sudo cp ~/Documents/.sudoers_copy/.passwd.txt /etc/sudoers'
-alias sudoers_nopasswd='sudo cp ~/Documents/.sudoers_copy/.nopasswd.txt /etc/sudoers'
 alias yt-dl-m='youtube-dl -o "%(title)s.%(ext)s" --extract-audio --audio-format mp3'
 alias qconfdir='cd ~/.config/qtile && ls'
 alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -129,7 +129,6 @@ alias ls='lsd'
 ###############
 ### STARTUP ###
 ###############
-pfetch
 
 # Enable vim mode
 bindkey -v

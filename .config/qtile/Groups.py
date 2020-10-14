@@ -3,9 +3,9 @@ from libqtile.config import Group
 names = [
         ("web",     {'layout': 'max'}),
         ("code",    {'layout': 'monadtall'}),
+        ("chat",    {'layout': 'max'}),
         ("game",    {'layout': 'floating'}),
         ("mail",    {'layout': 'max'}),
-        ("chat",    {'layout': 'max'}),
         ("6",       {'layout': 'monadtall'}),
         ("7",       {'layout': 'monadtall'}),
         ("8",       {'layout': 'monadtall'}),

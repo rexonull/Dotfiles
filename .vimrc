@@ -9,6 +9,10 @@ set incsearch
 set laststatus=2
 set noshowmode
 
+" for vimwiki
+set nocompatible
+filetype plugin on
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
@@ -22,10 +26,11 @@ Plug 'davisdude/vim-love-docs'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'cocopon/iceberg.vim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-colo onedark
+colo iceberg
 
 let $PYTHONPATH="/usr/lib/python3.8/site-packages"
 let g:indentLine_color_term = 243
@@ -66,7 +71,7 @@ hi Comment ctermfg = 7
 "highlight Number           ctermfg=1    ctermbg=none    cterm=none
 "highlight Function         ctermfg=1    ctermbg=none    cterm=none
 
-let g:vimwiki_list = [{'path': '~/My/vimwiki/', 'syntax': 'markdown', 'ext': '.wiki'}]
+let g:vimwiki_list = [{'path': '~/My/vimwiki/', 'ext': '.wiki'}]
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support

@@ -2,4 +2,5 @@
 
 picom &
 nitrogen --restore &
+nm-applet &
 lxappearance &

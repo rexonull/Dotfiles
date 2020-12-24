@@ -27,15 +27,31 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'sainnhe/edge'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'sainnhe/sonokai'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-colo iceberg
+" Important!!
+if has('termguicolors')
+    set termguicolors
+endif
+
+" The configuration options should be placed before `colorscheme edge`.
+let g:sonokai_style = 'andromeda'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+
+colorscheme sonokai
 
 let $PYTHONPATH="/usr/lib/python3.8/site-packages"
 let g:indentLine_color_term = 243
 let g:indentLine_char = '┊'
-let g:lightline = {'colorscheme': 'wombat',}
+
+let g:lightline = {}
+let g:lightline.colorscheme = 'sonokai'
+
 let mapleader = " "
 
 let g:termdebug_wide=1

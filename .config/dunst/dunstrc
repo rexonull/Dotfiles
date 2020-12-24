@@ -7,7 +7,7 @@ separator_height = 2
 padding = 10
 horizontal_padding = 15
 frame_width = 2
-frame_color = "#ff652f"
+frame_color = "#84a0c6"
 font = Cantarell
 show_age_threshold = 60
 word_wrap = yes
@@ -31,14 +31,14 @@ close = ctrl+space
 close_all = ctrl+shift+space
 
 [urgency_low]
-background = "#272727"
-foreground = "#747474"
-frame_color = "#ffe400"
+background = "#161821"
+foreground = "#c6c8d1"
+frame_color = "#b4be82"
 timeout = 3
 
 [urgency_normal]
-background = "#272727"
-foreground = "#747474"
+background = "#161821"
+foreground = "#c6c8d1"
 timeout = 5
 icon = /home/rexonull/.config/dunst/normal.png
 

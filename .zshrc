@@ -125,6 +125,7 @@ alias lauv_music='mpv ~/Music/Lauv* --shuffle'
 alias setHDMI='xrandr --output "HDMI1" --mode 1360x768'
 alias conHDMI='xrandr --output "eDP1" --auto --output "HDMI1" --above "eDP1"'
 alias ls='lsd'
+alias cleartestdir='rm -r ~/testdir/*'
 
 ###############
 ### STARTUP ###
@@ -136,9 +137,10 @@ bindkey -v
 ##############
 ### PROMPT ###
 ##############
-PROMPT="%F{6}[%f%~%F{6}]%f$ "
+PROMPT="%F{3}[%f%~%F{3}]%f$ "
 autoload -Uz vcs_info
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%F{2}[%f%b%F{2}]%f %r'
 RPROMPT=\$vcs_info_msg_0_
 
+PATH="$PATH:${HOME}/bin"

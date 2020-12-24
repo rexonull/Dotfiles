@@ -4,13 +4,12 @@ Config { font = "xft:Cantarell:size=9:antialias=true"
     , bgColor =      "#161821"
     , fgColor =      "#646464"
     , position =     Top
-    , border =       BottomB
     , borderColor =  "#646464"
 
     -- layout
     , sepChar =  "%"   -- delineator between plugin names and straight text
     , alignSep = "}{"  -- separator between left-right alignment
-    , template = "%StdinReader% }{ %battery%   %wlp2s0%  %date% "
+    , template = "    %StdinReader% }{ %alsa:default:Master%  |  %battery%  |  %wlp2s0%  |  %date%    "
 
     -- general behavior
     , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -42,6 +41,12 @@ Config { font = "xft:Cantarell:size=9:antialias=true"
 
         -- StdinReader
         , Run StdinReader
+        
+        -- Volume
+        , Run Alsa "default" "Master" [ "--template" , "<fc=#a093c7><fn=1>\xfa7d</fn> <volume>%</fc>" ]
+
+        -- Brightness
+        , Run Brightness [ "--template", "<percent>" ] 10
 
         -- network activity monitor (dynamic interface resolution)
         , Run Network "wlp2s0" [ "--template" , "<fc=#b4be82><fn=1>\xf0d8</fn> <tx>kB/s <fn=1>\xf0d7</fn> <rx>kB/s</fc>"
@@ -97,7 +102,7 @@ Config { font = "xft:Cantarell:size=9:antialias=true"
 
         -- time and date indicator 
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-        , Run Date           "<fc=#84a0c6>%F (%a) %T</fc>" "date" 10
+        , Run Date           "<fc=#84a0c6><fn=1>\xf5ef</fn> %F (%a) %T</fc>" "date" 10
 
         -- keyboard layout indicator
         , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")

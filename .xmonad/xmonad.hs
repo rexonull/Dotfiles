@@ -24,11 +24,11 @@ myFocusFollowsMouse = True
 myClickJustFocuses :: Bool
 myClickJustFocuses = True
 
-myBorderWidth   = 2
+myBorderWidth   = 0
 
 myModMask       = mod4Mask
 
-myWorkspaces    = [" web "," code "," chat "," game "," mail "," gfx "," 7 "," 8 "," misc "]
+myWorkspaces    = [" web "," code "," chat "," game "," mail "," gfx "," 7 "," music "," misc "]
 
 myNormalBorderColor  = "#abb2bf"
 myFocusedBorderColor = "#e06c75"
@@ -51,8 +51,14 @@ myKeysAdd = [ ("M-r",                       spawn "sxiv /home/rexonull/Pictures/
             -- Programs
             , ("M-b",                       spawn "firefox")
             , ("M-C-f",                     spawn "pcmanfm")
+            , ("M-m",                       spawn "java -jar /home/rexonull/My/minecraft/TLauncher-2.71.jar")
+
             , ("M-f",                       spawn (myTerminal ++ " -e ranger"))
             , ("M-v",                       spawn (myTerminal ++ " -e vim"))
+            , ("M-M1-x",                    spawn (myTerminal ++ " -e 'vim /home/rexonull/.xmonad/xmonad.hs'"))
+            , ("M-M1-b",                    spawn (myTerminal ++ " -e 'vim /home/rexonull/.config/xmobar/xmobarrc'"))
+            , ("M-<F1>",                    spawn "setxkbmap us")
+            , ("M-<F2>",                    spawn "setxkbmap np")
             ]
 
 
@@ -204,6 +210,7 @@ myStartupHook = do
     spawnOnce "nitrogen --restore &"
     spawnOnce "picom &"
     spawnOnce "lxappearance &"
+    spawnOnce "nm-applet &"
     spawnOnce "exec /usr/bin/trayer --edge top --align center --SetDockType true --SetPartialStrut true --expand true --width 6 --transparent true --alpha 0 --height 17 --tint 0x161821"
     setWMName "LG3D"
 
@@ -229,12 +236,13 @@ main = do
         manageHook         = myManageHook,
         handleEventHook    = myEventHook,
         logHook            = dynamicLogWithPP $ def { ppOutput = hPutStrLn xmproc
-                                                    , ppCurrent = xmobarColor "#c6c8d1" "" . wrap "[" "]"
-                                                    , ppVisible = xmobarColor "#c6c8d1" ""
-                                                    , ppHidden = xmobarColor "#c6c8d1" ""
+                                                    , ppCurrent = xmobarColor "#95c4ce" "" . wrap "[" "]"
+                                                    , ppVisible = xmobarColor "#95c4ce" ""
+                                                    , ppHidden = xmobarColor "#95c4ce" ""
                                                     , ppHiddenNoWindows = xmobarColor "#6b7089" ""
                                                     , ppTitle = xmobarColor "#95c4ce" "" . shorten 50
-                                                    , ppSep = "  <fc=#c6c8d1><fn=1>\xe621</fn></fc>  "
+                                                    , ppSep = "  |  "
+                                                    , ppLayout = xmobarColor "#95c4ce" ""
                                                     , ppUrgent = xmobarColor "#e27878" "" . wrap "!" "!"
                                                     },
 

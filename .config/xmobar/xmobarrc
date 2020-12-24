@@ -1,9 +1,9 @@
 Config { font = "xft:Cantarell:size=9:antialias=true"
     -- appearance
     , additionalFonts = ["xft:Symbols Nerd Font:size=10:antialias=true"]
-    , bgColor =      "#161821"
+    , bgColor =      "#2b2d3a"
     , fgColor =      "#646464"
-    , position =     Top
+    , position = Static { xpos = 0 , ypos = 0, width = 1366, height = 25 }
     , borderColor =  "#646464"
 
     -- layout
@@ -43,13 +43,13 @@ Config { font = "xft:Cantarell:size=9:antialias=true"
         , Run StdinReader
         
         -- Volume
-        , Run Alsa "default" "Master" [ "--template" , "<fc=#a093c7><fn=1>\xfa7d</fn> <volume>%</fc>" ]
+        , Run Alsa "default" "Master" [ "--template" , "<fc=#edc763><fn=1>\xfa7d</fn> <volume>%</fc>" ]
 
         -- Brightness
         , Run Brightness [ "--template", "<percent>" ] 10
 
         -- network activity monitor (dynamic interface resolution)
-        , Run Network "wlp2s0" [ "--template" , "<fc=#b4be82><fn=1>\xf0d8</fn> <tx>kB/s <fn=1>\xf0d7</fn> <rx>kB/s</fc>"
+        , Run Network "wlp2s0" [ "--template" , "<fc=#9ed06c><fn=1>\xf0d8</fn> <tx>kB/s <fn=1>\xf0d7</fn> <rx>kB/s</fc>"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
                              ] 10
@@ -82,10 +82,10 @@ Config { font = "xft:Cantarell:size=9:antialias=true"
                              ] 10
 
         -- battery monitor
-        , Run Battery        [ "--template" , "<fc=#e27878><acstatus></fc>"
+        , Run Battery        [ "--template" , "<fc=#fb617e><acstatus></fc>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
---                             , "--low"      , "#e27878"
+--                             , "--low"      , "#fb617e"
 --                             , "--normal"   , "#b4be82"
 --                             , "--high"     , "#b4be82"
 
@@ -102,7 +102,7 @@ Config { font = "xft:Cantarell:size=9:antialias=true"
 
         -- time and date indicator 
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-        , Run Date           "<fc=#84a0c6><fn=1>\xf5ef</fn> %F (%a) %T</fc>" "date" 10
+        , Run Date           "<fc=#6dcae8><fn=1>\xf5ef</fn> %F (%a) %T</fc>" "date" 10
 
         -- keyboard layout indicator
         , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")

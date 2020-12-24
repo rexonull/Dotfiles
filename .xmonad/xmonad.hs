@@ -211,7 +211,7 @@ myStartupHook = do
     spawnOnce "picom &"
     spawnOnce "lxappearance &"
     spawnOnce "nm-applet &"
-    spawnOnce "exec /usr/bin/trayer --edge top --align center --SetDockType true --SetPartialStrut true --expand true --width 6 --transparent true --alpha 0 --height 17 --tint 0x161821"
+    spawnOnce "exec /usr/bin/trayer --edge top --align center --SetDockType true --SetPartialStrut true --expand true --width 6 --transparent true --alpha 0 --height 25 --tint 0x2b2d3a"
     setWMName "LG3D"
 
 main = do
@@ -236,13 +236,13 @@ main = do
         manageHook         = myManageHook,
         handleEventHook    = myEventHook,
         logHook            = dynamicLogWithPP $ def { ppOutput = hPutStrLn xmproc
-                                                    , ppCurrent = xmobarColor "#95c4ce" "" . wrap "[" "]"
-                                                    , ppVisible = xmobarColor "#95c4ce" ""
-                                                    , ppHidden = xmobarColor "#95c4ce" ""
-                                                    , ppHiddenNoWindows = xmobarColor "#6b7089" ""
-                                                    , ppTitle = xmobarColor "#95c4ce" "" . shorten 50
+                                                    , ppCurrent = xmobarColor "#bb97ee" "" . wrap "-" "-"
+                                                    , ppVisible = xmobarColor "#6dcae8" ""
+                                                    , ppHidden = xmobarColor "#6dcae8" ""
+                                                    , ppHiddenNoWindows = xmobarColor "#34535e" ""
+                                                    , ppTitle = xmobarColor "#6dcae8" "" . shorten 50
                                                     , ppSep = "  |  "
-                                                    , ppLayout = xmobarColor "#95c4ce" ""
+                                                    , ppLayout = xmobarColor "#6dcae8" ""
                                                     , ppUrgent = xmobarColor "#e27878" "" . wrap "!" "!"
                                                     },
 

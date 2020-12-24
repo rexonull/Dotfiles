@@ -59,43 +59,43 @@ background = rgba(63, 63, 63, 0.8)
 # Colors from color0 to color254 can be set
 
 # special
-background = #161821
-foreground = #c6c8d1
-foreground_bold =  #c6c8d1
+background = #2b2d3a
+foreground = #e1e3e4
+foreground_bold =  #e1e3e4
 cursor = #d2d4de
 cursor_foreground = #d2d4de
 
 # black
-color0 = #161821
-color8 = #6b7089
+color0 = #181a1c
+color8 = #181a1c
 
 # red
-color1 = #e27878
-color9 = #e98989
+color1 = #fb617e
+color9 = #fb617e
 
 # green
-color2 = #b4be82
-color10 = #c0ca8e
+color2 = #9ed06c
+color10 = #9ed06c
 
 # yellow/orange
-color3 = #e2a478
-color11 = #e9b189
+color3 = #edc763
+color11 = #edc763
 
 # blue
-color4 = #84a0c6
-color12 = #91acd1
+color4 = #6dcae8
+color12 = #6dcae8
 
 # magenta/purple
-color5 = #a093c7
-color13 = #ada0d3
+color5 = #bb97ee
+color13 = #bb97ee
 
 # cyan
-color6 = #89b8c2
-color14 = #95c4ce
+color6 = #f89860
+color14 = #f89860
 
 # white
-color7 = #c6c8d1
-color15 = #d2d4de
+color7 = #e1e3e4
+color15 = #e1e3e4
 
 [hints]
 #font = Monospace 12

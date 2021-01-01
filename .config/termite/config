@@ -6,7 +6,8 @@
 #cell_width_scale = 1.0
 clickable_url = true
 #dynamic_title = true
-font = Fira Code 9
+#font = Fira Code weight=450 9
+font = Jetbrains Mono 9
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false

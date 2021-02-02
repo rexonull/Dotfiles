@@ -3,13 +3,13 @@ Config { font = "xft:Cantarell:size=9:antialias=true"
     , additionalFonts = ["xft:Symbols Nerd Font:size=10:antialias=true"]
     , bgColor =      "#2b2d3a"
     , fgColor =      "#646464"
-    , position = Static { xpos = 0 , ypos = 0, width = 1366, height = 25 }
+    , position = Static { xpos = 1024 , ypos = 25, width = 1366, height = 25 }
     , borderColor =  "#646464"
 
     -- layout
     , sepChar =  "%"   -- delineator between plugin names and straight text
     , alignSep = "}{"  -- separator between left-right alignment
-    , template = "    %StdinReader% }{ %alsa:default:Master%  |  %battery%  |  %wlp2s0%  |  %date%    "
+    , template = "    %StdinReader% }{ %alsa:default:Master%  |  %battery%  |  %wlp2s0%  |  %date%    monitor 0"
 
     -- general behavior
     , lowerOnStart =     True    -- send to bottom of window stack on start

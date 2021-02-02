@@ -11,6 +11,7 @@ import XMonad.Hooks.SetWMName
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.DynamicBars
 import XMonad.Util.EZConfig(additionalKeys, additionalKeysP, additionalMouseBindings)
 
 import qualified XMonad.StackSet as W
@@ -215,7 +216,8 @@ myStartupHook = do
     setWMName "LG3D"
 
 main = do
-    xmproc <- spawnPipe "xmobar"
+    xmproc <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc0"
+    xmproc <- spawnPipe "xmobar -x 1 $HOME/.config/xmobar/xmobarrc1"
     xmonad $ docks $ def {
       -- simple stuff
         terminal           = myTerminal,

@@ -1,10 +1,11 @@
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #080a1c
+;background = #181a1c
+background = #07191B
 background-alt = #0066cc
 ;foreground = ${xrdb:color7:#222}
-foreground = #44a0fc
-foreground-alt = #0044aa
+foreground = #9ed06c
+foreground-alt = #116666
 white = #ffffff
 primary = #ffb52a
 secondary = #e60053
@@ -21,28 +22,28 @@ menu-1-1 = sub-item 2.2;command
 
 [bar/mybar]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 23
-;radius = 13
-;offset-x = 1%
-;offset-y = 1%
+width = 98%
+height = 25
+radius = 13
+offset-x = 1%
+offset-y = 1%
 fixed-center = false
-;bottom = true
+bottom = true
 
-background = #080a1c
+background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
 line-color = #f00
 
-padding-left = 0
-padding-right = 2
+padding-left = 2
+padding-right = 4
 
 module-margin-left = 3
-module-margin-right = 0
+module-margin-right = 3
 ;module-radius = 10
 
-font-0 = Cantarell:pixelsize=10;1
+font-0 = Cantarell:pixelsize=9;1
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-2 = unifont:fontformat=truetype:size=10:antialias=false;0
 font-3 = fixed:pixelsize=10;1
@@ -66,6 +67,52 @@ wm-restack = bspwm
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
+[bar/mybar2]
+monitor = ${env:MONITOR:HDMI1}
+width = 98%
+height = 25
+radius = 13
+offset-x = 1%
+offset-y = 1%
+fixed-center = false
+bottom = true
+
+background = #181a1c
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+padding-left = 2
+padding-right = 4
+
+module-margin-left = 3
+module-margin-right = 3
+;module-radius = 10
+
+font-0 = Cantarell:pixelsize=9;1
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
+font-2 = unifont:fontformat=truetype:size=10:antialias=false;0
+font-3 = fixed:pixelsize=10;1
+
+
+modules-left = bspwm xwindow
+;modules-right = mpd backlight-acpi volume wlan eth battery date
+
+tray-position = right
+;tray-transparent = true
+;tray-background = #0063ff
+
+wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
 [module/xwindow]
 type = internal/xwindow
 label = " %title:0:40:...%"
@@ -90,8 +137,8 @@ enable-scroll = true
 reverse-scroll = true
 pin-workspaces = true
 
-ws-icon-0 = I;
-ws-icon-1 = II;
+ws-icon-0 = I;
+ws-icon-1 = II;
 ws-icon-2 = III;
 ws-icon-3 = IV;
 ws-icon-4 = V;
@@ -121,22 +168,22 @@ label-empty-padding = 2
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-background = ${colors.background}
 
-;label-monocle = "  "
-;label-monocle-foreground = ${colors.foreground}
-;label-tiled = "  "
-;label-tiled-foreground = ${colors.foreground}
-;label-fullscreen = "  "
-;label-fullscreen-foreground = ${colors.foreground}
-;label-floating = "  "
-;label-floating-foreground = ${colors.foreground}
-;label-pseudotiled = "  "
-;label-pseudotiled-foreground = ${colors.foreground}
-;label-locked = "  "
-;label-locked-foreground = ${colors.foreground}
-;label-sticky = "  "
-;label-sticky-foreground = ${colors.foreground}
-;label-private =  "     "
-;label-private-foreground = ${colors.foreground}
+label-monocle = "  "
+label-monocle-foreground = ${colors.foreground}
+label-tiled = "  "
+label-tiled-foreground = ${colors.foreground}
+label-fullscreen = "  "
+label-fullscreen-foreground = ${colors.foreground}
+label-floating = "  "
+label-floating-foreground = ${colors.foreground}
+label-pseudotiled = "  "
+label-pseudotiled-foreground = ${colors.foreground}
+label-locked = "  "
+label-locked-foreground = ${colors.foreground}
+label-sticky = "  "
+label-sticky-foreground = ${colors.foreground}
+label-private =  "     "
+label-private-foreground = ${colors.foreground}
 
 ; Separator in between workspaces
 label-separator = " "
@@ -258,8 +305,8 @@ label-volume-foreground = ${colors.white}
 
 format-muted-prefix = 
 
-format-muted-foreground = ${colors.white}
-label-muted = ||||||||||||||||||||
+format-muted-foreground = ${colors.foreground}
+label-muted = 
 
 bar-volume-width = 20 
 bar-volume-gradient = false
@@ -356,7 +403,7 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-margin-top = 0
+margin-top = 10
 margin-bottom = 0
 
 ; vim:ft=dosini

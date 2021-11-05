@@ -45,10 +45,11 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+-- beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "termite"
+terminal = "alacritty"
 editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -62,6 +63,7 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
+    awful.layout.suit.floating,
     --awful.layout.suit.tile.left,
     --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
@@ -241,25 +243,27 @@ globalkeys = gears.table.join(
               {description = "go back", group = "tag"}),
     
     --Hotkeys--
-    awful.key({                   }, "XF86AudioLowerVolume",  function () awful.spawn("amixer set Master 5%- unmute") end,
+    awful.key({                   }, "XF86AudioLowerVolume",  function () awful.spawn("amixer set Master 5%- unmute", false) end,
               {description = "raise volume", group = "hotkeys"}),
-    awful.key({                   }, "XF86AudioRaiseVolume",  function () awful.spawn("amixer set Master 5%+ unmute") end,
+    awful.key({                   }, "XF86AudioRaiseVolume",  function () awful.spawn("amixer set Master 5%+ unmute", false) end,
               {description = "lower volume", group = "hotkeys"}),
-    awful.key({                   }, "XF86MonBrightnessUp",   function () awful.spawn("xbacklight -inc 1") end,
+    awful.key({                   }, "XF86MonBrightnessUp",   function () awful.spawn("xbacklight -inc 1", false) end,
               {description = "raise brightness", group = "hotkeys"}),
-    awful.key({                   }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 1") end,
+    awful.key({                   }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 1", false) end,
               {description = "lower brightness", group = "hotkeys"}),
 
-    awful.key({ modkey            }, "b",                     function () awful.spawn("brave") end,
-              {description = "open firefox", group = "hotkeys"}),
+    awful.key({ modkey, "Shift"   }, "b",                     function () awful.spawn("brave") end,
+              {description = "open brave", group = "hotkeys"}),
     awful.key({ modkey, "Control" }, "f",                     function () awful.spawn("pcmanfm") end,
               {description = "open pcmanfm", group = "hotkeys"}),
-    awful.key({ modkey,           }, "m",                     function () awful.spawn("java -jar /home/rexonull/My/minecraft/TLauncher-2.71.jar") end,
+    awful.key({ modkey, "Control" }, "m",                     function () awful.spawn("java -jar /home/rexonull/My/minecraft/TLauncher-2.71.jar") end,
               {description = "open tlauncher", group = "hotkeys"}),
+    awful.key({ modkey, "Control" }, "Delete",                function () awful.spawn("betterlockscreen -s") end,
+              {description = "lock screen and sleep", group = "hotkeys"}),
 
-    awful.key({ modkey,           }, "F1",                    function () awful.spawn("setxkbmap us") end,
+    awful.key({ modkey,           }, "F1",                    function () awful.spawn("setxkbmap us", false) end,
               {description = "change keyboard layout to us", group = "hotkeys"}),
-    awful.key({ modkey,           }, "F2",                    function () awful.spawn("setxkbmap np") end,
+    awful.key({ modkey,           }, "F2",                    function () awful.spawn("setxkbmap np", false) end,
               {description = "change keyboard layout to np", group = "hotkeys"}),
 
 
@@ -318,9 +322,9 @@ globalkeys = gears.table.join(
               {description = "increase the number of columns", group = "layout"}),
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
               {description = "decrease the number of columns", group = "layout"}),
-    awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
+    awful.key({ modkey,           }, "Tab",   function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
+    awful.key({ modkey, "Shift"   }, "Tab",   function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
     awful.key({ modkey, "Control" }, "n",
@@ -592,4 +596,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nm-applet")
-
+awful.spawn.with_shell("volumeicon")
+awful.spawn.with_shell("cbatticon")
